@@ -26,6 +26,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
+          {% if user.is_authenticated %}
+          <a href="/" class="nav-item nav-link" id="home" aria-label="Home"
+            >Home</a
+          >
+          <a
+          href="/logout"
+          class="nav-item nav-link"
+          id="logout"
+          aria-label="Logout"
+          >Logout</a
+          >
+          {% else %}
           <a
             href="/login"
             class="nav-item nav-link"
@@ -40,16 +52,7 @@
             aria-label="Sign Up"
             >Sign Up</a
           >
-          <a
-            href="/logout"
-            class="nav-item nav-link"
-            id="logout"
-            aria-label="Logout"
-            >Logout</a
-          >
-          <a href="/" class="nav-item nav-link" id="home" aria-label="Home"
-            >Home</a
-          >
+          {% endif %}
         </div>
       </div>
     </nav>
